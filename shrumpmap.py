@@ -19,6 +19,7 @@ parser.add_argument('ip', help='IP address to ping')
 args = parser.parse_args()
 network = ipaddress.ip_network(args.ip)
 arr = []
+'shrimp'
 def pingHost (ip):
     result = subprocess.run(['ping', '-c', '1', '-W', '1', str(ip)], stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
     if result.returncode == 0:

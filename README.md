@@ -13,6 +13,7 @@ ShrumpMap is a network scanner written in Python
 - Host Port Scanning
 - Basic Service Version Detection
 - Lemon?
+- Distraction Mode
 
 
 

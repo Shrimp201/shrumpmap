@@ -15,11 +15,12 @@ group = parser.add_mutually_exclusive_group()
 group.add_argument('--ping', '-p', action='store_true', help='Pings every host in a subnet to check for shrump')
 group.add_argument('--scan', '-s', action='store_true', help='Scans a given host for open ports to check for shrump')
 group.add_argument('--lemon', '-l', action='store_true', help='Lemon?')
+group.add_argument('--distraction', '-d', action='store_true', help='Launches a distraction creating network traffic in order to provide cover for other tools')
 parser.add_argument('ip', help='IP address to ping')
 args = parser.parse_args()
 network = ipaddress.ip_network(args.ip)
 arr = []
-'shrimp'
+#shrimp
 def pingHost (ip):
     result = subprocess.run(['ping', '-c', '1', '-W', '1', str(ip)], stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
     if result.returncode == 0:
@@ -90,6 +91,11 @@ def portScan(target):
     if not open_ports:
         print(f'{Fore.red}[-] No Open Ports Found (could be higher than port 1000){Style.reset}')
     print('\n') 
+def distraction():
+    print(f'{Fore.blue}Launching Distraction...{Style.reset}')
+    while True:
+        for ip in network.hosts():
+            subprocess.Popen(['ping', '-c', '1', '-W', '1', str(ip)], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 try:
     if args.ping:
         ping(network)
@@ -110,6 +116,8 @@ try:
         print(f'Time taken: {time.time() - start_time:.2f} seconds')
     if args.lemon:
         print(f'{Fore.yellow}Lemon?{Style.reset}')
+    if args.distraction:
+        distraction()
 except KeyboardInterrupt:
     print('Shrumping off...')
     sys.exit()

@@ -92,7 +92,24 @@ def portScan(target):
         print(f'{Fore.red}[-] No Open Ports Found (could be higher than port 1000){Style.reset}')
     print('\n') 
 def distraction():
-    print(f'{Fore.blue}Launching Distraction...{Style.reset}')
+    print(f'{Fore.blue}Shrumping the Network...{Style.reset}')
+    print(f'''{Fore.blue}
+⠀⠀⠀⠀⠀⠀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣀⣤⣤⣀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⢀⣀⡙⠻⢶⣶⣦⣴⣶⣶⣶⠾⠛⠛⠋⠉⠉⠉⠉⠙⠃⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠉⠉⠙⠛⠛⠋⠉⠉⠡⣤⣴⣶⣶⣾⣿⣿⣿⣛⣩⣤⡤⠖⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢠⣴⣾⠂⣴⣦⠈⣿⣿⣿⣿⣿⣿⠿⠛⣋⠁⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⢀⣼⣿⣶⣄⡉⠻⣧⣌⣁⣴⣿⣿⣿⣿⣿⣿⡿⠛⠁⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⣾⣿⣿⣿⣿⣿⣦⡈⢻⣿⣿⣿⣿⡿⠿⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⡀⢻⣿⣿⣿⣿⣿⣿⣿⡄⠙⠛⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⢠⣷⣄⡉⠻⢿⣿⣿⣿⠏⠠⢶⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⢸⣿⣿⣿⣶⣤⣈⠙⠁⠰⣦⣀⠉⠻⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠘⢿⣿⣿⣿⣿⣿⡇⠠⣦⣄⠉⠳⣤⠈⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⢠⣌⣉⡉⠉⣉⡁⠀⠀⠙⠗⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠹⢿⣿⣿⣿⣿⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠙⠻⣿⣿⠟⢀⣤⡀⠀⠀⠀⠀⠀⠀⣀⣀⣠⣤⣤⣤⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠛⠿⠿⡿⠂⣀⣠⣤⣤⣤⣀⣉⣉⠉⠉⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠙⠛⠛⠛⠛⠋⠉⠉⠁⠀⠀⠀⠀
+{Style.reset}''')
     while True:
         for ip in network.hosts():
             subprocess.Popen(['ping', '-c', '1', '-W', '1', str(ip)], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
